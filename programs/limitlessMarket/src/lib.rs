@@ -16,4 +16,13 @@ pub mod limitless_market {
     ) -> Result<()> {
         initialize_vault(ctx, market, util_pct)
     }
+
+    pub fn initialize_market_handler(
+        ctx: Context<InitializeMarket>,
+        vault: Pubkey,
+        oracle: Pubkey,
+        collateral_token: Pubkey,
+    ) -> Result<()> {
+        initialize_market(ctx, vault, oracle, collateral_token)
+    }
 }

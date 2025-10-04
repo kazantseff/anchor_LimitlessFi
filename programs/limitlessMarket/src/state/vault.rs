@@ -13,11 +13,13 @@ pub struct Vault {
 }
 
 impl Vault {
-    pub fn initialize(&mut self, market: Pubkey, util_pct: u64) {
+    pub fn initialize(&mut self, market: Pubkey, util_pct: u64, share_mint: Pubkey, bump: u8) {
         self.market = market;
         self.scale_factor = 1_000_000_000_000_000_000; // WAD
         self.max_util_percentage = util_pct;
         self.total_underlying_deposited = 0;
         self.total_shares = 0;
+        self.share_mint = share_mint;
+        self.pda_bump = bump;
     }
 }

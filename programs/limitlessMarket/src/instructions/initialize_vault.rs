@@ -10,10 +10,14 @@ pub fn initialize_vault(
 ) -> Result<()> {
     let state = &mut ctx.accounts.vault_state;
 
-    // Initialize state and share token
-    state.initialize(market, util_pct);
-    state.share_mint = ctx.accounts.share_mint.key();
-    state.pda_bump = ctx.bumps.vault_state;
+    // Initialize state
+    state.initialize(
+        market,
+        util_pct,
+        ctx.accounts.share_mint.key(),
+        ctx.bumps.vault_state,
+    );
+
     Ok(())
 }
 
