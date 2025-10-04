@@ -1,1 +1,1 @@
-A rewrite of [LimitelssFi] solidity implementation in anchor.
+A rewrite of [LimitelssFi](https://github.com/kazantseff/LimitlessFi) solidity implementation in anchor.
